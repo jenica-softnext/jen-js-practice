@@ -1,20 +1,40 @@
-let num1 = document.querySelector("#num1");
-let num2 = document.querySelector("#num2");
+let num1El = document.querySelector("#num1");
+let num2El = document.querySelector("#num2");
+const numField = document.querySelector(".num-field");
 
-const result = document.querySelector(".result");
+let result = document.querySelector(".result");
 const resultText = document.querySelector(".result-text");
 
 const btnMult = document.querySelector("#multiply");
+const btnDiv = document.querySelector("#divide");
+
+const checkNumField = function (answer) {
+  if (!numField.value) {
+    resultText.innerHTML = `PLEASE ENTER A NUMBER!`;
+  } else {
+    resultText.innerHTML = `The result is: <span class="result">${answer}</span>`;
+  }
+};
 
 btnMult.addEventListener("click", function () {
-  num1 = num1.value;
-  num2 = num2.value;
+  let num1 = num1El.value;
+  let num2 = num2El.value;
 
-  if (num1 && num2) {
-    result.textContent = num1 * num2;
-  } else {
-    resultText.textContent = "ENTER A NUMBER...";
-    resultText.style.textAlign = "center";
-    resultText.style.fontSize = "20px";
-  }
+  let product = Number(num1 * num2);
+
+  checkNumField(product);
+});
+
+btnDiv.addEventListener("click", function () {
+  let num1 = num1El.value;
+  let num2 = num2El.value;
+
+  let quotient = Number(num1 / num2);
+
+  checkNumField(quotient);
+});
+
+numField.addEventListener("click", function () {
+  num1El.value = "";
+  num2El.value = "";
 });

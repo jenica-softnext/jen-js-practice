@@ -40,7 +40,7 @@ label {
   margin-bottom: 20px;
 }
 
-input[type="text"] {
+input[type="number"] {
   width: calc(100% - 120px);
   border: 1px solid #000;
   border-radius: 0;

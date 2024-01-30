@@ -75,7 +75,7 @@ console.log(
 const string1 = "w3resource";
 const string2 = string1.split("");
 
-console.log(string2);
+console.log(string2.reverse().join(""));
 
 /*/////////////////
 Mark and John are trying to compare their BMI (Body Mass Index),
@@ -254,4 +254,5 @@ if (randomNumber === guessNumber) {
 
 // Write a JavaScript program to calculate the days left before Christmas.
 
-
+// Write a JavaScript program to get the website URL (loading page).
+console.log(window.location.href);
